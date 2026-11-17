@@ -1,5 +1,7 @@
 # Early Detection of Thoracic Disease Using NIH Chest X-rays
 
+> Portfolio fork of the [original five-person team project](https://github.com/portablerug/x-ray-classification). My work included baseline CNN training and evaluation. The results below are research and course-project results, not a clinically validated diagnostic system.
+
 **Live Demo:** https://huggingface.co/spaces/Doraemoons/nih-xray-classifier
 
 End-to-end, cloud-based machine learning project focused on binary chest X-ray classification:
@@ -77,8 +79,8 @@ Detailed Phase 1 checklist is in `docs/01_phase_1_cloud_setup.md`.
 
 - ResNet-50 trained with two-phase transfer learning (frozen backbone → full fine-tune)
 - Threshold tuned on validation set (0.11) to maximize F1
-- High recall makes the model suitable as a screening triage tool
-- Trained on 1,000 images per split — full dataset training expected to improve results significantly
+- High recall at the selected threshold came with lower precision; clinical suitability has not been established
+- Trained on 1,000 images per split; performance on larger or external datasets is unknown
 
 See `notebooks/07_report.ipynb` for the complete project report.
 
@@ -140,7 +142,6 @@ This is the only path that differs between teammates.
 | `02_label_engineering.ipynb` | Binary labels and train/val/test split |
 | `03_image_pipeline.ipynb` | Image transforms and DataLoaders |
 | `04_baseline_model.ipynb` | Baseline CNN training and evaluation |
-| `05_transfer_learning.ipynb` | ResNet-50 transfer learning, threshold tuning |
 | `05_transfer_learning.ipynb` | ResNet-50 transfer learning, threshold tuning |
 | `06_evaluation.ipynb` | Statistical evaluation, bootstrap CI, clinical interpretation |
 | `07_report.ipynb` | Final project report with live prediction demo |
